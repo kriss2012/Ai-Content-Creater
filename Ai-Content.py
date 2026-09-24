@@ -9,8 +9,8 @@ import time
 app = flask.Flask(__name__)
 
 # --- CONFIGURATION ---
-# The API key you provided has been added.
-GEMINI_API_KEY = "AIzaSyA1L7pLPyFEnkB2y7i2AETbt3KFNQvhUYY" 
+# Load API key securely from environment variable or .env file
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
 
 # --- Data Persistence ---
 DATA_FILE = 'documents.json'
